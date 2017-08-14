@@ -4,6 +4,7 @@ import './App.css';
 
 import Header from "./pages/header";
 import Main from "./pages/main";
+import Footer from "./pages/footer";
 
 
 
@@ -14,6 +15,7 @@ class App extends Component {
                     <div>  
                         <Header/>
                         <Main/>
+                        <Footer/>                        
                     </div>                
                 </Router>
                 );
