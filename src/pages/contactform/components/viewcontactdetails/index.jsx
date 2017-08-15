@@ -1,8 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import SelectSearch from 'react-select-search'
-
-import ContactsStore from '../../../../stores/contactstore'
-import * as ContactsActions from '../../../../actions/contactsactions'
 
 export default class contactDetails extends React.Component {      
   render () {
@@ -34,4 +32,15 @@ export default class contactDetails extends React.Component {
       </div>
     )
   }
+};
+
+contactDetails.propTypes = {
+  fieldsValues:PropTypes.objectOf(PropTypes.string),
+  countryList:PropTypes.array,
+  action: PropTypes.string.isRequired,
+  operationMsg: PropTypes.string,
+  deleteAction: PropTypes.func,
+  countryChange: PropTypes.func,
+  inputChanges: PropTypes.func,
+  submitAction: PropTypes.func
 };

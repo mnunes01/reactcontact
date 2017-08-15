@@ -72,7 +72,7 @@ export default class ContactDetailsRouter extends React.Component {
     })
   }
   handleUpdateId (values) {
-    this.setState({id: values.id})
+    this.setState({id: values.id, action: values.id})
   }
   handleInputChange (event) {
     const target = event.target

@@ -1,15 +1,6 @@
 import React from 'react'
-import * as ContactsActions from '../../actions/contactsactions'
 
-export default class Header extends React.Component {
-  createDummyContact () {
-    ContactsActions.createContact(
-      {firstName: 'ricardo',
-        lastName: 'sousa',
-        email: 'rsousa@fff.com',
-        country: 'Spain'
-      })
-  }
+export default class Header extends React.Component {  
   render () {
     return (
       <div>
