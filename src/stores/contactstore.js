@@ -9,7 +9,7 @@ class ContactsStore extends EventEmitter {
     this.contacts = this.getData() // holds the local mutable collection
   }
 
-    // local storage functions
+  // local storage functions
   getData () { // retrieve data from localstorage
     return JSON.parse(window.localStorage.getItem(this.itemName)) || []
   }
@@ -35,7 +35,7 @@ class ContactsStore extends EventEmitter {
     this.emit('newid', {id})
   }
   saveContact (val) { // update contact if id is not null or create a new contact otherwise to local collection a localstorage
-    if (val.values.id === null) {
+    if (val.values.id === null || val.values.id === undefined) {
       this.createContact(val.values)
     } else {
       var index = _.findIndex(this.contacts, {id: val.values.id})

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import * as ContactsActions from '../actions/contactsactions'
+import * as ContactsActions from '../../actions/contactsactions'
 
 export default class Header extends React.Component {
   createDummyContact () {

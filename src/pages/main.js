@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
-import ContactList from '../containers/contactslist/contactslist.jsx'
-import ContactDetailsRouter from '../containers/contactdetails/contactdetailsrouter'
+import ContactList from './contactslist/'
+// import ContactDetailsRouter from '../containers/contactdetails/contactdetailsrouter'
+import ContactDetailsRouter from './contactform/'
 import ErrorPage from './404'
 
 export default class Main extends React.Component {
