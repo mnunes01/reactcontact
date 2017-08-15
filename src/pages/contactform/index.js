@@ -20,12 +20,12 @@ export default class ContactDetailsRouter extends React.Component {
       country: undefined,
       operationMsg: null
     }
-    this.saveMsg = this.saveMsg.bind(this) 
+    this.saveMsg = this.saveMsg.bind(this)
     this.updateId = this.handleUpdateId.bind(this)
     this.closeDetails = this.handleRedirectAfterDeleteContact.bind(this)
   }
   componentWillMount () {
-    this.setState({action:this.props.match.params.id})
+    this.setState({action: this.props.match.params.id})
     this.setUserDetails(this.props)
     ContactsStore.on('saved', this.saveMsg)
     ContactsStore.on('newid', this.updateId)
@@ -36,28 +36,28 @@ export default class ContactDetailsRouter extends React.Component {
     ContactsStore.removeListener('newid', this.updateId)
     ContactsStore.removeListener('contactdeleted', this.closeDetails)
   }
-  
-  componentWillReceiveProps (nextProps) {      
-    this.setState({keyValue: Math.random(), action:nextProps.match.params.id})    
+
+  componentWillReceiveProps (nextProps) {
+    this.setState({keyValue: Math.random(), action: nextProps.match.params.id})
     this.setUserDetails(nextProps)
   }
-  
-  setUserDetails (props) {        
-    if (props.match.params.id === 'new') {      
+
+  setUserDetails (props) {
+    if (props.match.params.id === 'new') {
       this.setState({
-        id:undefined,      
-        firstName: undefined,      
+        id: undefined,
+        firstName: undefined,
         lastName: undefined,
         email: undefined,
-        country: undefined,
+        country: undefined
       })
-    }else{
+    } else {
       this.setState(ContactsStore.getContactById(Number(props.match.params.id)))
     }
   }
-  
+
   handleSubmit (event) {
-    ContactsActions.saveContact({id:this.state.id,firstName:this.state.firstName,lastName: this.state.lastName,email: this.state.email,country: this.state.country})
+    ContactsActions.saveContact({id: this.state.id, firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, country: this.state.country})
     event.preventDefault()
   }
   handleDeleteContact () {
@@ -65,14 +65,14 @@ export default class ContactDetailsRouter extends React.Component {
   }
   handleRedirectAfterDeleteContact () {
     this.props.history.push('/')
-  }  
+  }
   handleCountryChange (event) {
     this.setState({
       country: event.value
     })
   }
-  handleUpdateId (values) {    
-    this.setState({id: values.id})       
+  handleUpdateId (values) {
+    this.setState({id: values.id})
   }
   handleInputChange (event) {
     const target = event.target
@@ -82,23 +82,23 @@ export default class ContactDetailsRouter extends React.Component {
       [name]: value
     })
   }
-  
-  saveMsg () {  
-    this.setState({operationMsg: 'record saved'});      
-  } 
-  
+
+  saveMsg () {
+    this.setState({operationMsg: 'record saved'})
+  }
+
   render () {
     return (
       <ContactDetails
         key={this.state.keyValue}
         action={this.state.action}
         operationMsg={this.state.operationMsg}
-        submitAction={this.handleSubmit.bind(this)}   
+        submitAction={this.handleSubmit.bind(this)}
         deleteAction={this.handleDeleteContact.bind(this)}
         countryChange={this.handleCountryChange.bind(this)}
         countryList={COUNTRY_LIST}
-        inputChanges={this.handleInputChange.bind(this)}   
-        fieldsValues={{firstName:this.state.firstName,lastName: this.state.lastName,email: this.state.email,country: this.state.country}}    
+        inputChanges={this.handleInputChange.bind(this)}
+        fieldsValues={{firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, country: this.state.country}}
                 />
     )
   }
