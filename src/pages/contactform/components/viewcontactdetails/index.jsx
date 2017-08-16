@@ -64,13 +64,15 @@ export default class contactDetails extends React.Component {
           <Divider light />
           
           <div>
-            <input type='submit' name='saveContact' value='Save' />
-            {this.props.showDeleteButton ? <button onClick={this.props.deleteAction}>Delete</button> : ''}
-            <button onClick={this.props.closeAction}>Close</button>
+            <input type='submit' name='saveContact' value='Save' />                        
           </div>    
-          <Divider light />
-          
+          <Divider light />          
         </form>
+        <div>
+          {this.props.showDeleteButton ? <button onClick={this.props.deleteAction}>Delete</button> : ''}
+          <button onClick={this.props.closeAction}>Close</button>
+          </div>      
+        <Divider light />
       </div>      
     )
   }

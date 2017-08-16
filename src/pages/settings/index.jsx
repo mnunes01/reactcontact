@@ -2,6 +2,10 @@ import React from 'react'
 import * as ContactsActions from '../../actions/contactsactions'
 
 export default class SettingsController extends React.Component {
+    constructor(){
+      super()
+      this.clickAction = this.createDummyContact.bind(this)
+    }
   createDummyContact () {
     ContactsActions.createContact(
       {firstName: 'ricardo',
@@ -13,7 +17,7 @@ export default class SettingsController extends React.Component {
   render () {
     return (
       <div>
-        <button onClick={this.createDummyContact.bind(this)}>New dummy Contact</button>        
+        <button onClick={this.clickAction}>New dummy Contact</button>        
       </div>
     )
   }

@@ -29,6 +29,11 @@ export default class ContactDetailsController extends React.Component {
     this.saveMsg = this.saveMsg.bind(this)
     this.updateId = this.handleUpdateId.bind(this)
     this.closeDetails = this.handleRedirectAfterDeleteContact.bind(this)
+    this.submitAction = this.handleSubmit.bind(this)
+    this.deleteAction = this.handleDeleteContact.bind(this)
+    this.closeAction = this.closeAction.bind(this)
+    this.countryChange = this.handleCountryChange.bind(this)
+    this.inputChanges = this.handleInputChange.bind(this)
   }
   componentWillMount() {
     this.setState({keyValue: Math.random(), action: this.props.match.params.action})
@@ -145,12 +150,12 @@ export default class ContactDetailsController extends React.Component {
           key={this.state.keyValue}
           action={this.state.action}
           operationMsg={this.state.operationMsg}
-          submitAction={this.handleSubmit.bind(this)}
-          deleteAction={this.handleDeleteContact.bind(this)}
-          closeAction={this.closeAction.bind(this)}
-          countryChange={this.handleCountryChange.bind(this)}
+          submitAction={this.submitAction}
+          deleteAction={this.deleteAction}
+          closeAction={this.closeAction}
+          countryChange={this.countryChange}
           countryList={COUNTRY_LIST}
-          inputChanges={this.handleInputChange.bind(this)}
+          inputChanges={this.inputChanges}
           showDeleteButton={this.state.action === 'edit'}
           fieldsValues={{id: this.state.id, firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, country: this.state.country}}
           fieldsMsg ={{firstNameMsg: this.state.firstName_errorMsg, lastNameMsg: this.state.lastName_errorMsg, emailMsg: this.state.email_errorMsg, countryMsg: this.state.country_errorMsg}}

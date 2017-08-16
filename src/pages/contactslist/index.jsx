@@ -13,7 +13,9 @@ export default class contactListController extends React.Component {
     this.state = {
       contacts: ContactsStore.getAll()
     }
-    this.getContacts = this.getContactcs.bind(this)
+    this.getContacts = this.getContactcs.bind(this)   
+    this.handleRedirectAction = this.handleRedirect.bind(this)
+    this.deleteAction = this.deleteContact.bind(this)
   }
   componentWillMount () {
     ContactsStore.on('change', this.getContacts)
@@ -25,7 +27,8 @@ export default class contactListController extends React.Component {
   getContactcs () {
     this.setState({contacts: ContactsStore.getAll()})
   }
-  deleteContact (id) {    
+  deleteContact (id) { 
+    console.log('deleting: ' + id)
     ContactsActions.deleteContact(id)
   }
   handleRedirect(id) {    
@@ -40,17 +43,14 @@ export default class contactListController extends React.Component {
           key={id}
           id={id}
           firstName={firstName}
-          deleteAction={this.deleteContact.bind(this,id)}
-          clickAction={this.handleRedirect.bind(this,id)}    
+          deleteAction={() => this.deleteAction(id)}
+          clickAction={() => this.handleRedirectAction(id)}    
         />
         )
     })    
     return (
         <div>
-        {ContactComponents}
-            
-       
-            
+        {ContactComponents}          
         </div>
     )
   }
