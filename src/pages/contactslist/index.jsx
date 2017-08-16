@@ -1,10 +1,8 @@
 import React from 'react'
-// import ContactsStore from "../../stores/contactstore";
 import ContactsStore from '../../stores/contactstore'
 import * as ContactsActions from '../../actions/contactsactions'
 
 import ViewContactList from './components/viewcontactlist/'
-
 
 export default class contactListController extends React.Component {
   constructor () {
@@ -13,29 +11,29 @@ export default class contactListController extends React.Component {
     this.state = {
       contacts: ContactsStore.getAll()
     }
-    this.getContacts = this.getContactcs.bind(this)   
+    this.getContacts = this.getContactcs.bind(this)
     this.handleRedirectAction = this.handleRedirect.bind(this)
     this.deleteAction = this.deleteContact.bind(this)
   }
   componentWillMount () {
     ContactsStore.on('change', this.getContacts)
   }
-  componentWillUnmount () {    
+  componentWillUnmount () {
     // unbind listeners to prevent memory leaks
     ContactsStore.removeListener('change', this.getContacts)
   }
   getContactcs () {
     this.setState({contacts: ContactsStore.getAll()})
   }
-  deleteContact (id) { 
-    console.log('deleting: ' + id)
+  deleteContact (id) {
     ContactsActions.deleteContact(id)
   }
-  handleRedirect(id) {    
-    this.props.history.push('/details/edit/'+id)
+
+  handleRedirect (id) {
+    this.props.history.push('/details/edit/' + id)
   }
 
-  render () {    
+  render () {
     const ContactComponents = this.state.contacts.map((contact) => {
       let {id, firstName} = contact
       return (
@@ -44,14 +42,14 @@ export default class contactListController extends React.Component {
           id={id}
           firstName={firstName}
           deleteAction={() => this.deleteAction(id)}
-          clickAction={() => this.handleRedirectAction(id)}    
+          clickAction={() => this.handleRedirectAction(id)}
         />
-        )
-    })    
+      )
+    })
     return (
-        <div>
-        {ContactComponents}          
-        </div>
+      <div>
+        {ContactComponents}
+      </div>
     )
   }
 };

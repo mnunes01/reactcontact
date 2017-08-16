@@ -9,7 +9,7 @@ import ErrorPage from './404'
 export default class Main extends React.Component {
   render () {
     return (
-      <div>        
+      <div>
         <Switch>
           <Route exact path='/' component={ContactListController} />
           <Route exact path='/details/:action/:id' component={ContactDetailsController} />
