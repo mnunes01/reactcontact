@@ -1,21 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import * as ContactsActions from '../../actions/contactsactions'
 
-export default class Header extends React.Component {
-  createDummyContact () {
-    ContactsActions.createContact(
-      {firstName: 'ricardo',
-        lastName: 'sousa',
-        email: 'rsousa@fff.com',
-        country: 'Spain'
-      })
-  }
+export default class Header extends React.Component {  
   render () {
     return (
-      <div>
-        <button onClick={this.createDummyContact.bind(this)}>New dummy Contact</button>
+      <div className='headerLinks'>        
+        <Link to={'/'}> Home</Link>
         <Link to={'/newcontact/new'}> Add Contact</Link>
+        <Link to={'/settings/'}> Settings</Link>        
       </div>
     )
   }

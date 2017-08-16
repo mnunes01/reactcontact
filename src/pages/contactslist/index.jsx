@@ -1,48 +1,57 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 // import ContactsStore from "../../stores/contactstore";
 import ContactsStore from '../../stores/contactstore'
 import * as ContactsActions from '../../actions/contactsactions'
 
-export default class contactList extends React.Component {
+import ViewContactList from './components/viewcontactlist/'
+
+
+export default class contactListController extends React.Component {
   constructor () {
     super()
-    this.getContactcs = this.getContactcs.bind(this)
+    this._getContactcs = this.getContactcs.bind(this)
     this.state = {
       contacts: ContactsStore.getAll()
     }
+    this.getContacts = this.getContactcs.bind(this)
   }
   componentWillMount () {
-    ContactsStore.on('change', this.getContactcs)
+    ContactsStore.on('change', this.getContacts)
   }
-  componentWillUnmount () {
-        // unbind listeners to prevent memory leaks
+  componentWillUnmount () {    
+    // unbind listeners to prevent memory leaks
     ContactsStore.removeListener('change', this.getContacts)
   }
-
   getContactcs () {
-    this.setState({contacts: ContactsStore.getAll()}, console.log(this.state))
+    this.setState({contacts: ContactsStore.getAll()})
   }
-  deleteContact (id) {
+  deleteContact (id) {    
     ContactsActions.deleteContact(id)
   }
+  handleRedirect(id) {    
+    this.props.history.push('/details/edit/'+id)
+  }
 
-  render () {
+  render () {    
     const ContactComponents = this.state.contacts.map((contact) => {
       let {id, firstName} = contact
       return (
-
-        <li key={id}>
-          <Link to={'/details/' + id}> {firstName}</Link>
-          <button onClick={this.deleteContact.bind(this, id)}>Delete</button>
-          <Link to={'/details/' + id}> Edit</Link>
-
-        </li>)
-    })
+        <ViewContactList
+          key={id}
+          id={id}
+          firstName={firstName}
+          deleteAction={this.deleteContact.bind(this,id)}
+          clickAction={this.handleRedirect.bind(this,id)}    
+        />
+        )
+    })    
     return (
-      <div>
+        <div>
         {ContactComponents}
-      </div>
+            
+       
+            
+        </div>
     )
   }
 };
