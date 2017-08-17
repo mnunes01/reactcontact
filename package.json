@@ -2,7 +2,7 @@
   "name": "gig",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mnunes01.github.io/reactcontact",
+  "homepage": "https://mnunes01.github.io/reactcontact/",
   "dependencies": {
     "country-list": "^1.1.0",
     "eslint": "^4.4.1",
