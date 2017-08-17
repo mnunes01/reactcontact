@@ -10,16 +10,16 @@ export default class contactDetails extends React.Component {
   render () {
     const {id, firstName, lastName, email, country} = this.props.fieldsValues
     const {firstNameMsg, lastNameMsg, emailMsg, countryMsg} = this.props.fieldsMsg
-    const {formDisabled} = this.props.formDisabled;
+    const {formDisabled} = this.props.formDisabled
     return (
       <div className='contactDetails'>
-  <small>action: {this.props.action} <br /> contact id: {id} <br /> operationsMessage: {this.props.operationMsg} <br /> form status: {formDisabled}</small>
+        <small>action: {this.props.action} <br /> contact id: {id} <br /> operationsMessage: {this.props.operationMsg} <br /> form status: {formDisabled}</small>
         <form onSubmit={this.props.submitAction}>
           <div>
             <div>
               <label>
                             First Name:
-                            <input type='text' name='firstName' value={firstName} onChange={this.props.inputChanges} required disabled={formDisabled}/>
+                            <input type='text' name='firstName' value={firstName} onChange={this.props.inputChanges} required disabled={formDisabled} />
               </label>
             </div>
             <div>
@@ -32,7 +32,7 @@ export default class contactDetails extends React.Component {
             <div>
               <label>
                             Last Name:
-                            <input type='text' name='lastName' value={lastName} onChange={this.props.inputChanges} required disabled={formDisabled}/>
+                            <input type='text' name='lastName' value={lastName} onChange={this.props.inputChanges} required disabled={formDisabled} />
               </label>
             </div>
             <div>
@@ -45,7 +45,7 @@ export default class contactDetails extends React.Component {
             <div>
               <label>
                             Email:
-                            <input type='email' name='email' value={email} onChange={this.props.inputChanges} required disabled={formDisabled}/>
+                            <input type='email' name='email' value={email} onChange={this.props.inputChanges} required disabled={formDisabled} />
               </label>
             </div>
             <div>
@@ -73,7 +73,7 @@ export default class contactDetails extends React.Component {
           <Divider light />
 
           <div>
-            <input type='submit' name='saveContact' value='Save' disabled={formDisabled}/>
+            <input type='submit' name='saveContact' value='Save' disabled={formDisabled} />
           </div>
           <Divider light />
         </form>

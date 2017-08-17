@@ -27,7 +27,7 @@ export default class ContactDetailsController extends React.Component {
       country_errorMsg: '',
       formDisabled: ''
     }
-    
+
     this.saveMsg = this.saveMsg.bind(this)
     this.updateId = this.handleUpdateId.bind(this)
     this.closeDetails = this.handleRedirectAfterDeleteContact.bind(this)
@@ -55,14 +55,14 @@ export default class ContactDetailsController extends React.Component {
     this.setUserDetails(nextProps)
   }
 
-  setUserDetails (props) {      
+  setUserDetails (props) {
     if (props.match.params.action === 'new') {
       this.setState({
         id: undefined,
         firstName: '',
         lastName: '',
         email: '',
-        country: '',        
+        country: ''
       })
     } else {
       this.setState(ContactsStore.getContactById(Number(props.match.params.id)))
@@ -113,7 +113,7 @@ export default class ContactDetailsController extends React.Component {
   }
   handleSubmit (event) {
     if (this.validateFormData()) {
-      this.setState({formDisabled:'disabled', operationMsg: 'saving...'})         
+      this.setState({formDisabled: 'disabled', operationMsg: 'saving...'})
       ContactsActions.saveContact({key: this.state.keyValue, id: this.state.id, firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, country: this.state.country})
     }
     event.preventDefault()
@@ -144,7 +144,7 @@ export default class ContactDetailsController extends React.Component {
     this.props.history.push('/')
   }
   saveMsg () {
-    this.setState({operationMsg: 'record saved',formDisabled:''})
+    this.setState({operationMsg: 'record saved', formDisabled: ''})
   }
 
   render () {

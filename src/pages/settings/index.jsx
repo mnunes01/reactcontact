@@ -22,9 +22,9 @@ export default class SettingsController extends React.Component {
     console.log(ContactsStore.getAll())
   }
   clearCollection () {
-    ContactsStore.removeData();
+    ContactsStore.removeData()
   }
-  
+
   render () {
     return (
       <div className='settings'>
