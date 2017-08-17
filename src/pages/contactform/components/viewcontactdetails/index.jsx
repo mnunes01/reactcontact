@@ -85,7 +85,7 @@ export default class contactDetails extends React.Component {
       </div>
     )
   }
-};
+}
 
 contactDetails.propTypes = {
   // fieldsValues:PropTypes.oneOfType([PropTypes.number,PropTypes.string]),

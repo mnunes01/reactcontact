@@ -22,4 +22,4 @@ export default class viewcontactList extends React.Component {
       </div>
     )
   }
-  }
+}
