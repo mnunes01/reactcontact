@@ -15,9 +15,11 @@ class ContactsStore extends EventEmitter {
   }
   setData () { // used on save and create
     window.localStorage.setItem(this.itemName, JSON.stringify(this.contacts))
+    //this.contacts = this.getData()
   }
   removeData () { // not in use, todo: implement settings view and enable option to clean all localstorage
     window.localStorage.removeItem(this.itemName)
+    this.contacts = this.getData()
   }
 
     // temp object functions

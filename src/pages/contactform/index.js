@@ -24,8 +24,10 @@ export default class ContactDetailsController extends React.Component {
       firstName_errorMsg: '',
       lastName_errorMsg: '',
       email_errorMsg: '',
-      country_errorMsg: ''
+      country_errorMsg: '',
+      formDisabled: ''
     }
+    
     this.saveMsg = this.saveMsg.bind(this)
     this.updateId = this.handleUpdateId.bind(this)
     this.closeDetails = this.handleRedirectAfterDeleteContact.bind(this)
@@ -53,14 +55,14 @@ export default class ContactDetailsController extends React.Component {
     this.setUserDetails(nextProps)
   }
 
-  setUserDetails (props) {
+  setUserDetails (props) {      
     if (props.match.params.action === 'new') {
       this.setState({
         id: undefined,
         firstName: '',
         lastName: '',
         email: '',
-        country: ''
+        country: '',        
       })
     } else {
       this.setState(ContactsStore.getContactById(Number(props.match.params.id)))
@@ -111,6 +113,7 @@ export default class ContactDetailsController extends React.Component {
   }
   handleSubmit (event) {
     if (this.validateFormData()) {
+      this.setState({formDisabled:'disabled', operationMsg: 'saving...'})         
       ContactsActions.saveContact({key: this.state.keyValue, id: this.state.id, firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, country: this.state.country})
     }
     event.preventDefault()
@@ -141,7 +144,7 @@ export default class ContactDetailsController extends React.Component {
     this.props.history.push('/')
   }
   saveMsg () {
-    this.setState({operationMsg: 'record saved'})
+    this.setState({operationMsg: 'record saved',formDisabled:''})
   }
 
   render () {
@@ -156,6 +159,7 @@ export default class ContactDetailsController extends React.Component {
         countryChange={this.countryChange}
         countryList={COUNTRY_LIST}
         inputChanges={this.inputChanges}
+        formDisabled={this.state.formDisabled}
         showDeleteButton={this.state.action === 'edit'}
         fieldsValues={{id: this.state.id, firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, country: this.state.country}}
         fieldsMsg={{firstNameMsg: this.state.firstName_errorMsg, lastNameMsg: this.state.lastName_errorMsg, emailMsg: this.state.email_errorMsg, countryMsg: this.state.country_errorMsg}}

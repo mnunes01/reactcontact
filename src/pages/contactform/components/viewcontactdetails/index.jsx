@@ -8,18 +8,18 @@ import Divider from 'material-ui/Divider'
 
 export default class contactDetails extends React.Component {
   render () {
-    let {id, firstName, lastName, email, country} = this.props.fieldsValues
-    let {firstNameMsg, lastNameMsg, emailMsg, countryMsg} = this.props.fieldsMsg
-
+    const {id, firstName, lastName, email, country} = this.props.fieldsValues
+    const {firstNameMsg, lastNameMsg, emailMsg, countryMsg} = this.props.fieldsMsg
+    const {formDisabled} = this.props.formDisabled;
     return (
       <div className='contactDetails'>
-        <small>action: {this.props.action} <br /> contact id: {id} <br /> operationsMessage: {this.props.operationMsg}</small>
+  <small>action: {this.props.action} <br /> contact id: {id} <br /> operationsMessage: {this.props.operationMsg} <br /> form status: {formDisabled}</small>
         <form onSubmit={this.props.submitAction}>
           <div>
             <div>
               <label>
                             First Name:
-                            <input type='text' name='firstName' value={firstName} onChange={this.props.inputChanges} />
+                            <input type='text' name='firstName' value={firstName} onChange={this.props.inputChanges} required disabled={formDisabled}/>
               </label>
             </div>
             <div>
@@ -32,7 +32,7 @@ export default class contactDetails extends React.Component {
             <div>
               <label>
                             Last Name:
-                            <input type='text' name='lastName' value={lastName} onChange={this.props.inputChanges} />
+                            <input type='text' name='lastName' value={lastName} onChange={this.props.inputChanges} required disabled={formDisabled}/>
               </label>
             </div>
             <div>
@@ -45,7 +45,7 @@ export default class contactDetails extends React.Component {
             <div>
               <label>
                             Email:
-                            <input type='email' name='email' value={email} onChange={this.props.inputChanges} />
+                            <input type='email' name='email' value={email} onChange={this.props.inputChanges} required disabled={formDisabled}/>
               </label>
             </div>
             <div>
@@ -62,7 +62,7 @@ export default class contactDetails extends React.Component {
                   name='country'
                   onChange={this.props.countryChange}
                   value={country}
-                  placeholder=''
+                  placeholder='Type or select your country'
                />
               </label>
             </div>
@@ -73,13 +73,13 @@ export default class contactDetails extends React.Component {
           <Divider light />
 
           <div>
-            <input type='submit' name='saveContact' value='Save' />
+            <input type='submit' name='saveContact' value='Save' disabled={formDisabled}/>
           </div>
           <Divider light />
         </form>
         <div>
-          {this.props.showDeleteButton ? <button onClick={this.props.deleteAction}>Delete</button> : ''}
-          <button onClick={this.props.closeAction}>Close</button>
+          {this.props.showDeleteButton ? <button onClick={this.props.deleteAction} disabled={formDisabled}>Delete</button> : ''}
+          <button onClick={this.props.closeAction} disabled={formDisabled}>Close</button>
         </div>
         <Divider light />
       </div>
@@ -89,6 +89,7 @@ export default class contactDetails extends React.Component {
 
 contactDetails.propTypes = {
   // fieldsValues:PropTypes.oneOfType([PropTypes.number,PropTypes.string]),
+  formDisabled: PropTypes.string,
   showDeleteButton: PropTypes.bool,
   countryList: PropTypes.array,
   action: PropTypes.string.isRequired,
