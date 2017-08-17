@@ -3,7 +3,7 @@ import Chip from 'material-ui/Chip'
 import Avatar from 'material-ui/Avatar'
 import FaceIcon from 'material-ui-icons/Face'
 
-export default class viewcontactList extends React.Component {
+export default class ViewContactList extends React.Component {
   render () {
     const {deleteAction, clickAction, firstName, id} = this.props
     return (
@@ -13,12 +13,12 @@ export default class viewcontactList extends React.Component {
             <Avatar>
               <FaceIcon />
             </Avatar>
-              }
+          }
           label={firstName}
           key={id}
           onClick={clickAction}
           onRequestDelete={deleteAction}
-            />
+        />
       </div>
     )
   }

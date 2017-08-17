@@ -6,7 +6,7 @@ import 'react-virtualized-select/styles.css'
 import VirtualizedSelect from 'react-virtualized-select'
 import Divider from 'material-ui/Divider'
 
-export default class contactDetails extends React.Component {
+export default class ViewContactDetails extends React.Component {
   render () {
     const {id, firstName, lastName, email, country} = this.props.fieldsValues
     const {firstNameMsg, lastNameMsg, emailMsg, countryMsg} = this.props.fieldsMsg

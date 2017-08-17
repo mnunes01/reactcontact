@@ -4,7 +4,7 @@ import * as ContactsActions from '../../actions/contactsactions'
 
 import ViewContactList from './components/viewcontactlist/'
 
-export default class contactListController extends React.Component {
+export default class ContactListController extends React.Component {
   constructor () {
     super()
     this.state = {
@@ -52,4 +52,4 @@ export default class contactListController extends React.Component {
       </div>
     )
   }
-};
+}

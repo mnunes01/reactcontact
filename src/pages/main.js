@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import ContactListController from './contactslist/'
-// import ContactDetailsRouter from '../containers/contactdetails/contactdetailsrouter'
 import ContactDetailsController from './contactform/'
 import SettingsController from './settings'
 import ErrorPage from './404'
