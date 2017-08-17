@@ -18,8 +18,8 @@ export default class ViewContactDetails extends React.Component {
           <div>
             <div>
               <label>
-                            First Name:
-                            <input type='text' name='firstName' value={firstName} onChange={this.props.inputChanges} required disabled={formDisabled} />
+                First Name:
+                <input type='text' name='firstName' value={firstName} onChange={this.props.inputChanges} required disabled={formDisabled} />
               </label>
             </div>
             <div>
@@ -31,8 +31,8 @@ export default class ViewContactDetails extends React.Component {
           <div>
             <div>
               <label>
-                            Last Name:
-                            <input type='text' name='lastName' value={lastName} onChange={this.props.inputChanges} required disabled={formDisabled} />
+                Last Name:
+                <input type='text' name='lastName' value={lastName} onChange={this.props.inputChanges} required disabled={formDisabled} />
               </label>
             </div>
             <div>
@@ -44,8 +44,8 @@ export default class ViewContactDetails extends React.Component {
           <div>
             <div>
               <label>
-                            Email:
-                            <input type='email' name='email' value={email} onChange={this.props.inputChanges} required disabled={formDisabled} />
+                Email:
+                <input type='email' name='email' value={email} onChange={this.props.inputChanges} required disabled={formDisabled} />
               </label>
             </div>
             <div>
@@ -63,7 +63,7 @@ export default class ViewContactDetails extends React.Component {
                   onChange={this.props.countryChange}
                   value={country}
                   placeholder='Type or select your country'
-               />
+                />
               </label>
             </div>
             <div>
@@ -87,7 +87,7 @@ export default class ViewContactDetails extends React.Component {
   }
 }
 
-contactDetails.propTypes = {
+ViewContactDetails.propTypes = {
   // fieldsValues:PropTypes.oneOfType([PropTypes.number,PropTypes.string]),
   formDisabled: PropTypes.string,
   showDeleteButton: PropTypes.bool,
