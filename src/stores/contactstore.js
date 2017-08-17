@@ -61,7 +61,7 @@ class ContactsStore extends EventEmitter {
     // action handler routing
   handleActions (action) {
     switch (action.type) {
-      case 'CREATE_CONTACT': // used directly only for test porpouse, todo: remove action, createcontac mode is private to this class
+      case 'CREATE_CONTACT': // used directly only for test porpouse, todo: remove action, createcontac mode is private to this class. Is being used directly by settings to creat dummy contacts data.
         {
           this.createContact(action.values)
           break
