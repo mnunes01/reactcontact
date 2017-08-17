@@ -17,7 +17,7 @@ export function deleteContact (id) {
     type: 'DELETE_CONTACT',
     id
   }
-    )
+  )
 }
 export function saveContact (values) {
   dispatcher.dispatch({
@@ -30,5 +30,5 @@ export function saveContact (values) {
       country: values.country
     }
   }
-    )
+  )
 }

@@ -22,7 +22,7 @@ class ContactsStore extends EventEmitter {
     this.contacts = this.getData()
   }
 
-    // temp object functions
+  // temp object functions
   createContact (val) { // create a new contact, using date.now as unique id, stores on to local collection a localstorage
     const id = Date.now()
     this.contacts.push({
@@ -60,28 +60,28 @@ class ContactsStore extends EventEmitter {
     return _.find(this.contacts, {id: id})
   }
 
-    // action handler routing
+  // action handler routing
   handleActions (action) {
     switch (action.type) {
       case 'CREATE_CONTACT': // used directly only for test porpouse, todo: remove action, createcontac mode is private to this class. Is being used directly by settings to creat dummy contacts data.
-        {
-          this.createContact(action.values)
-          break
-        }
+      {
+        this.createContact(action.values)
+        break
+      }
       case 'DELETE_CONTACT': // deletes contact
-        {
-          this.deleteContact(action.id)
-          break
-        }
+      {
+        this.deleteContact(action.id)
+        break
+      }
       case 'SAVE_CONTACT': // create new or updates a existing contact
-        {
-          this.saveContact(action)
-          break
-        }
+      {
+        this.saveContact(action)
+        break
+      }
       default:
-        {
-          break
-        }
+      {
+        break
+      }
     }
   }
 }

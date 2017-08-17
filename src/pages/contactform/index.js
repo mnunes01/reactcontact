@@ -163,7 +163,7 @@ export default class ContactDetailsController extends React.Component {
         showDeleteButton={this.state.action === 'edit'}
         fieldsValues={{id: this.state.id, firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, country: this.state.country}}
         fieldsMsg={{firstNameMsg: this.state.firstName_errorMsg, lastNameMsg: this.state.lastName_errorMsg, emailMsg: this.state.email_errorMsg, countryMsg: this.state.country_errorMsg}}
-          />
+      />
     )
   }
-  }
+}
