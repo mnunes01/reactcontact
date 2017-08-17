@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import ContactListController from './contactslist/'
 import ContactDetailsController from './contactform/'
 import SettingsController from './settings'
-import ErrorPage from './404'
+import ErrorPage from './error/404'
 
 export default class Main extends React.Component {
   render () {
