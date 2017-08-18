@@ -129,10 +129,7 @@ The use of this packages and its components was based on the need of a fast deve
 All of the included packages are maintened used across a significant number of projects
 
 
-
-
 * Made with love at the sound of:
-<<<<<<< HEAD
 * [RadioHead - TKOL RMX 123467](https://open.spotify.com/album/47xaqCsJcYFWqD1gwujl1T)
 * [minilogue](https://www.youtube.com/watch?v=qgiL7lsIATA)
 * [Adam Beyer b2b Joseph Capriati](https://www.youtube.com/watch?v=0QLmIL7ffcQ)
@@ -140,12 +137,3 @@ All of the included packages are maintened used across a significant number of p
 
 
 @Mnunes 2017 hello:[Mnunes01@hotmail.com](mailto:mnunes01@hotmail.com)
-=======
-** [RadioHead - TKOL RMX 123467](https://open.spotify.com/album/47xaqCsJcYFWqD1gwujl1T) **
-** [minilogue](https://www.youtube.com/watch?v=qgiL7lsIATA) **
-** [Adam Beyer b2b Joseph Capriati](https://www.youtube.com/watch?v=0QLmIL7ffcQ) **
-** [DJVadim](https://www.youtube.com/watch?v=alJTygi_A9k) **
-
-
-* @Mnunes 2017 hello:[Mnunes01@hotmail.com](mailto:mnunes01@hotmail.com)
->>>>>>> e926f8d0bef41bc94903bd5b49236a6cde6d9c8d
