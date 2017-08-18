@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [available commands](#available-commands)
 - [npm packages used](#npm-packages-used)
 
-##Introduction
+## Introduction
 A deployed version of this app can be acessed on [demo](https://mnunes01.github.io/reactcontact/)
 
 This is a one page aplication created using [react facebok app bundle](https://github.com/facebookincubator/create-react-app)
@@ -43,7 +43,7 @@ The file structure is organized by the following folders:
 *stores
 Holds the store that handles the [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) data from local storage to the aplication and the emit messages.
 
-##Todo
+## Todo
 *Split the store class and the methods to access local storage
 *Implement Bootstrap and improve the UI (really poor atm)
 *Implement data validation on store class
@@ -51,7 +51,7 @@ Holds the store that handles the [CRUD](https://en.wikipedia.org/wiki/Create,_re
 *validate against duplicate records
 *...
 
-##How To Start
+## How To Start
 To run the project on development enviroment simple run
 -npm install
 -npm start
@@ -59,7 +59,7 @@ To run the project on development enviroment simple run
 navigate to http://localhost:3000 on your favourite browser and enjoy.
 
 
-##Available commands
+## Available commands
 Package.json contains several scrips that can be run with npm
 
 ### `npm start`
@@ -114,7 +114,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 
-##Npm packages used
+## Npm packages used
 Besides the pre includede with [react facebok app bundle](https://github.com/facebookincubator/create-react-app) ,several packages have been used on the development of this project:
 
 react-virtualized-select [more info](https://www.npmjs.com/package/react-virtualized-select)
