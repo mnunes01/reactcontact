@@ -10,8 +10,12 @@ class ContactsStore extends EventEmitter {
   }
 
   // local storage functions
-  getData () { // retrieve data from localstorage
-    return JSON.parse(window.localStorage.getItem(this.itemName)) || []
+  getData () { // retrieve data from localstorage //typeof string comparassion due to the fact that JEST test will fail otherwise
+    if (typeof window.localStorage.getItem(this.itemName) === 'string') {
+      return JSON.parse(window.localStorage.getItem(this.itemName))
+    } else {
+      return []
+    }
   }
   setData () { // used on save and create
     window.localStorage.setItem(this.itemName, JSON.stringify(this.contacts))

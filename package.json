@@ -21,17 +21,19 @@
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.11",
     "react-virtualized-select": "^3.1.0",
+    "source-map-explorer": "^1.4.0",
     "validator": "^8.0.0"
   },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "cleanup": "rmdir node_modules/gh-pages/.cache /q /s",
+    "analyze": "source-map-explorer build/static/js/main.*",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "test-standart": "standart && node my-tests.js"
+    "standard": "standard --fix"
   },
   "devDependencies": {
     "eslint": "^4.3.0",
