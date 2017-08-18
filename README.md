@@ -117,13 +117,13 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Npm packages used
 Besides the pre includede with [react facebok app bundle](https://github.com/facebookincubator/create-react-app) ,several packages have been used on the development of this project:
 
-react-virtualized-select [more info](https://www.npmjs.com/package/react-virtualized-select)
-source-map-explorer - [more info](https://www.npmjs.com/package/source-map-explorer)
-country-list - [more info](https://www.npmjs.com/package/country-list)
-lodash - [more info](https://www.npmjs.com/package/lodash)
-material-ui - [more info](https://www.npmjs.com/package/material-ui)
-material-ui-icons - [more info](https://www.npmjs.com/package/material-ui-icons)
-validator - [more info](https://www.npmjs.com/package/validator)
+* react-virtualized-select [more info](https://www.npmjs.com/package/react-virtualized-select)
+* source-map-explorer - [more info](https://www.npmjs.com/package/source-map-explorer)
+* country-list - [more info](https://www.npmjs.com/package/country-list)
+* lodash - [more info](https://www.npmjs.com/package/lodash)
+* material-ui - [more info](https://www.npmjs.com/package/material-ui)
+* material-ui-icons - [more info](https://www.npmjs.com/package/material-ui-icons)
+* validator - [more info](https://www.npmjs.com/package/validator)
 
 The use of this packages and its components was based on the need of a fast development and the DRY pattern.
 All of the included packages are maintened used across a significant number of projects
