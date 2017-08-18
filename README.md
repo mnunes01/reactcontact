@@ -21,40 +21,40 @@ The user can then click over the contact 'chip' to access the view/edit view or 
 Add contact presents the user with a new contact view where the user can register a new contact, filling the fields with correct values and clicking on save.
 
 Settings, provide the user with some utils funcionalities:
-*Create Dummy Data - creates a dummy static record on the localStorage collection
-*Console log stored collection - outputs the localStorage content on the browser console
-*Clear collection - removes all contents of the localStorage and cleaning up the contact list
+* Create Dummy Data - creates a dummy static record on the localStorage collection
+* Console log stored collection - outputs the localStorage content on the browser console
+* Clear collection - removes all contents of the localStorage and cleaning up the contact list
 
 The fields validation is done in two stages
-** before submitAction, using 'require' param on html input field
-** after submit using npm [validator](https://www.npmjs.com/package/validator) package and testing against empty and email format.
+* before submitAction, using 'require' param on html input field
+* after submit using npm [validator](https://www.npmjs.com/package/validator) package and testing against empty and email format.
 
 
 The View / Edit / New is shared by the Component contactform
 
 The file structure is organized by the following folders:
-*Actions -> stores the dispacther actions to interact with the store.
-*Pages -> stores the used modules and views
-**<components_folder> ->
-*index.jsx -> main component file, controller, deals with logic and renders the view
-***"__tests__" -> JEST tests
-***"components" -> main component folder
-****"view<component name>" -> stores the view
-*stores
+* Actions -> stores the dispacther actions to interact with the store.
+* Pages -> stores the used modules and views
+** <components_folder> ->
+* index.jsx -> main component file, controller, deals with logic and renders the view
+*** "__tests__" -> JEST tests
+*** "components" -> main component folder
+**** "view<component name>" -> stores the view
+* stores
 Holds the store that handles the [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) data from local storage to the aplication and the emit messages.
 
 ## Todo
-*Split the store class and the methods to access local storage
-*Implement Bootstrap and improve the UI (really poor atm)
-*Implement data validation on store class
-*add export/import methods to the settings
-*validate against duplicate records
-*...
+* Split the store class and the methods to access local storage
+* Implement Bootstrap and improve the UI (really poor atm)
+* Implement data validation on store class
+* add export/import methods to the settings
+* validate against duplicate records
+* ...
 
 ## How To Start
 To run the project on development enviroment simple run
--npm install
--npm start
+- npm install
+- npm start
 
 navigate to http://localhost:3000 on your favourite browser and enjoy.
 
@@ -131,11 +131,11 @@ All of the included packages are maintened used across a significant number of p
 
 
 
-*Made with love at the sound of:
-**[RadioHead - TKOL RMX 123467](https://open.spotify.com/album/47xaqCsJcYFWqD1gwujl1T)
-**[minilogue](https://www.youtube.com/watch?v=qgiL7lsIATA)
-**[Adam Beyer b2b Joseph Capriati](https://www.youtube.com/watch?v=0QLmIL7ffcQ)
-**[DJVadim](https://www.youtube.com/watch?v=alJTygi_A9k)
+* Made with love at the sound of:
+** [RadioHead - TKOL RMX 123467](https://open.spotify.com/album/47xaqCsJcYFWqD1gwujl1T) **
+** [minilogue](https://www.youtube.com/watch?v=qgiL7lsIATA) **
+** [Adam Beyer b2b Joseph Capriati](https://www.youtube.com/watch?v=0QLmIL7ffcQ) **
+** [DJVadim](https://www.youtube.com/watch?v=alJTygi_A9k) **
 
 
-*@Mnunes 2017 hello:[Mnunes01@hotmail.com](mailto:mnunes01@hotmail.com)
+* @Mnunes 2017 hello:[Mnunes01@hotmail.com](mailto:mnunes01@hotmail.com)
